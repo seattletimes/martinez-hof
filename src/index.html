@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <%= t.include("partials/_head.html", grunt.data.json) %>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+    <%= t.include("partials/_nav.html") %>
+
+    <%= t.include("partials/_ad.html", { type: "banner" }) %>
+
+    <main class="constrained">
+
+      <header class="splash-animation">
+        <div class="image-container">
+          <div class="filmstrip pending"></div>
+        </div>
+        <div class="titles">
+          <h1>Measuring Greatness</h1>
+          <h2>Edgar Martínez in the Hall of Fame</h2>
+        </div>
+      </header>
+
+      <div class="factoids">
+
+        <div class="fact">
+          <h2>All-Star games (7)</h2>
+          <div class="stars icons">
+            <% for (var i = 0; i < 7; i++) { %>
+            <img src="./assets/star.jpg">
+            <% } %>
+          </div>
+        </div>
+
+        <div class="fact">
+          <h2>Silver Slugger awards (5)</h2>
+          <div class="sluggers icons">
+            <% for (var i = 0; i < 5; i++) { %>
+            <img src="./assets/slugger.jpg">
+            <% } %>
+          </div>
+        </div>
+
+        <div class="fact">
+          <h2>AL batting titles (2)</h2>
+          <div class="titles">
+            <% [[1992, .343], [1995, .356]].forEach(function([year, avg]) { %> 
+            <div class="title">
+              <img src="./assets/crown.jpg">
+              <h3><%= year %></h3>
+              <div class="average"><%= avg %> AVG</div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+
+        <div class="fact">
+          <h2>MVP award votes</h2>
+          <div class="mvp-row">
+            <img src="./assets/mvp.jpg">
+            <ul class="votes">
+              <% csv.mvp.forEach(function(row) { %>
+              <li> <%= row.year %> - <%= row.place %> place
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="yearly-data">
+        <% csv.years.forEach(function(row) { %>
+        <div class="year">
+          <div class="padding-box">
+            <div class="ba-svg">
+              <svg viewBox="-.1 0 2.2 1.2" preserveAspectRatio="none" width="100" height="50">
+                <%
+                  var arc = row.ba / .4 * Math.PI;
+                  var x = 2 - (Math.cos(arc) + 1);
+                  var y = 1 - Math.sin(arc) - 1;
+                %>
+                <path d="M0 1.2 a 1 1, 0, 0, 1, <%= x %> <%= y %>" class="ba-arc" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <div class="ba-label"><%= row.ba.toFixed(3) %></div>
+              <div class="year-label"><%= row.year %></div>
+              <div class="rbi-grid" role="image" alt="RBI for <%= row.year %>: <%= row.rbi %>">
+                <% for (var i = 0; i < 150; i++) { %>
+                <div class="cell <%= i < row.rbi ? "run" : "null" %>"></div>
+                <% } %>
+              </div>
+              <div class="rbi-label">
+                <b><%= row.rbi %></b> RBI
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+
+    </main>
+
+    <%= t.include("partials/_navBottom.html") %>
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_analytics.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>
