@@ -22,43 +22,49 @@
         </div>
       </header>
 
-      <div class="factoids">
+      <hr />
+
+      <section class="intro">
+        <aside class="slider">
+          <image-slider>
+            <img src="./assets/edgar92.jpg" alt="Edgar Martínez, 1992">
+            <img src="./assets/edgar04.jpg" alt="Edgar Martínez, 2004">
+          </image-slider>
+
+          <div class="caption">Comparison between Martínez in 1992 and 2004</div>
+        </aside>
+
+        <p>
+          Edgar Martínez is headed for Cooperstown. The graceful, mild-mannered slugger became perhaps the greatest designated hitter to ever play the game over his storied 18-year career in Seattle. No. 11, known simply as 'Gar by many, was by no means the flashy superstar his Hall-of-Fame teammate Ken Griffey Jr. — the only other player to be enshrined as a Mariner. Instead, Edgar was a mark of consistency. 
+
+        <p>
+          He was a consistent force in the middle of the lineup, and was known for spraying the baseball all over the yard, hitting doubles and driving in runs. His most memorable moment, fittingly, came on a hit known now as 'The Double' that clinched the ALDS for the Mariners and capped the most iconic moment in team history. Here's a look back on Edgar's Hall-of-Fame career.
+      </section>
+
+      <section class="factoids">
 
         <div class="fact">
-          <h2>All-Star games (7)</h2>
-          <div class="stars icons">
-            <% for (var i = 0; i < 7; i++) { %>
-            <img src="./assets/star.jpg">
-            <% } %>
-          </div>
+          <img class="star icon" src="./assets/star.jpg">
+          <h2>All-Star games</h2>
+          <h3>7</h3>
         </div>
 
         <div class="fact">
-          <h2>Silver Slugger awards (5)</h2>
-          <div class="sluggers icons">
-            <% for (var i = 0; i < 5; i++) { %>
-            <img src="./assets/slugger.jpg">
-            <% } %>
-          </div>
+          <img class="bat icon" src="./assets/slugger.jpg">
+          <h2>Silver Sluggers</h2>
+          <h3>5</h3>
         </div>
 
         <div class="fact">
-          <h2>AL batting titles (2)</h2>
-          <div class="titles">
-            <% [[1992, .343], [1995, .356]].forEach(function([year, avg]) { %> 
-            <div class="title">
-              <img src="./assets/crown.jpg">
-              <h3><%= year %></h3>
-              <div class="average"><%= avg %> AVG</div>
-            </div>
-            <% }) %>
-          </div>
+          <img class="crown icon" src="./assets/crown.jpg">
+          <h2>AL batting titles</h2>
+          <h3>2</h3>
         </div>
 
         <div class="fact">
+          <img class="mvp icon" src="./assets/mvp.jpg">
           <h2>MVP award votes</h2>
           <div class="mvp-row">
-            <img src="./assets/mvp.jpg">
             <ul class="votes">
               <% csv.mvp.forEach(function(row) { %>
               <li> <%= row.year %> - <%= row.place %> place
@@ -66,9 +72,14 @@
             </ul>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="yearly-data">
+      <section class="league-comparison">
+        <h2>Martínez vs the League</h2>
+        <div class="placeholder"></div>
+      </section>
+
+      <section class="yearly-data">
         <% csv.years.forEach(function(row) { %>
         <div class="year">
           <div class="padding-box">
@@ -95,7 +106,7 @@
           </div>
         </div>
         <% }) %>
-      </div>
+      </section>
 
     </main>
 

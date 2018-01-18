@@ -67,39 +67,65 @@ div.filmstrip {
   }
 }
 
+hr {
+  width: 50%;
+  max-width: 400px;
+  margin: 36px auto;
+  height: 4px;
+  background: @df-blue;
+  border: none;
+}
+
+section {
+  margin-top: 48px;
+}
+
+.intro {
+  max-width: 600px;
+  margin: auto;
+}
+
+aside.slider {
+  width: 33%;
+  max-width: 400px;
+  float: right;
+  margin: 0 0 24px 24px;
+
+  image-slider {
+    margin-bottom: 8px;
+  }
+
+  .caption {
+    font-family: @df-sans;
+    font-size: 16px;
+    font-style: italic;
+  }
+}
+
 .factoids {
+  clear: both;
   .display-flex();
   .flex-wrap(wrap);
+  .align-items(flex-end);
   text-align: center;
 
+  h2 {
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 148px;
+    color: @df-blue;
+    margin: 0;
+  }
+
   .fact {
-    .flex(0 0 50%);
+    .flex(0 0 25%);
     padding: 20px;
   }
 
-  .icons {
-    text-align: center;
-  }
+  .icon {
 
-  .stars img {
-    width: 12.5%;
-    max-width: 67px;
-  }
-
-  .sluggers img {
-    width: 15%;
-    max-width: 40px;
-  }
-
-  .titles {
-
-    .title {
-      display: inline-block;
-    }
-
-    h3 {
-      margin: 0;
-    }
   }
 
   .mvp-row {
@@ -114,8 +140,18 @@ div.filmstrip {
   }
 }
 
-.comparable-players {
+.league-comparison {
+  .placeholder {
+    max-width: 600px;
+    margin: auto;
 
+    &::before {
+      display: block;
+      content: "";
+      padding-bottom: percentage(9 / 16);
+      background: @df-light-gray;
+    }
+  }
 }
 
 .yearly-data {
