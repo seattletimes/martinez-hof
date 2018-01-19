@@ -1,5 +1,7 @@
 @import "seattletimes";
 
+@import (inline) "npm://chartist/dist/chartist.min.css";
+
 .constrained {
   max-width: 960px;
   margin: auto;
@@ -41,6 +43,7 @@ header.splash-animation {
 }
 
 @keyframes step-all {
+  from { background-position: 0% }
   to { background-position: 140% }
 }
 
@@ -61,7 +64,7 @@ header.splash-animation {
 div.filmstrip {
   background-image: url(./assets/martinez-hof-strip-compressed.jpg);
   background-size: 2600% 100%;
-  background-position: 0 0;
+  background-position: percentage(16 / 25) 0;
   background-repeat: no-repeat;
   // there's no way to add a following delay, which is dumb.
   animation: step-all 5s steps(25 * 1.4) infinite;
@@ -103,7 +106,7 @@ section {
 }
 
 aside.slider {
-  width: 33%;
+  width: 50%;
   max-width: 400px;
   float: right;
   margin: 0 0 24px 24px;
@@ -177,17 +180,7 @@ aside.slider {
 }
 
 .league-comparison {
-  .placeholder {
-    max-width: 600px;
-    margin: auto;
 
-    &::before {
-      display: block;
-      content: "";
-      padding-bottom: percentage(9 / 16);
-      background: @df-light-gray;
-    }
-  }
 }
 
 .yearly-data {

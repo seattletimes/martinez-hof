@@ -28,7 +28,7 @@
 
         <p>
           Edgar Martínez is headed for Cooperstown. The graceful, mild-mannered slugger became perhaps the greatest designated hitter to ever play the game over his storied 18-year career in Seattle, and now, his career will be forever remembered in baseball's Hall of Fame. 
-          
+
         <aside class="slider">
           <image-slider>
             <img src="./assets/edgar92.jpg" alt="Edgar Martínez, 1992">
@@ -86,8 +86,16 @@
       <section class="league-comparison">
         <h2 class="subhead">Martínez vs the League</h2>
         <p class="chatter">
-          Edgar Martinez, perennially underrated? He was regarded as too old to be a prospect. A torn hamstring relegated him to a career as a designated hitter, overlooked for MVPs and underappreciated by Hall of Fame voters for his nine-year life on the ballot. His reputation will forever be his consistency — and those doubles — but at his peak, Martinez was undoubtedly among the league’s elite. Explore his careers numbers against that season’s American League MVP, and the average American Leaguer to qualify for the batting crown.
-        <div class="placeholder"></div>
+          Edgar Martínez, perennially underrated? He was regarded as too old to be a prospect. A torn hamstring relegated him to a career as a designated hitter, overlooked for MVPs and underappreciated by Hall of Fame voters for his nine-year life on the ballot. His reputation will forever be his consistency — and those doubles — but at his peak, Martínez was undoubtedly among the league’s elite. Explore his careers numbers against that season’s American League MVP, and the average American Leaguer to qualify for the batting crown.
+
+        <div class="modes">
+          <input id="runs" type="radio" name="mode">
+          <label for="runs">Runs</label>
+
+          <input id="hits" type="radio" name="mode">
+          <label for="hits">Hits</label>
+        </div>
+        <div class="chart ct-minor-seventh"></div>
       </section>
 
       <section class="yearly-data">
@@ -131,6 +139,14 @@
     </main>
 
     <%= t.include("partials/_navBottom.html") %>
+
+    <script>
+window.hofData = {
+  edgar: <%= JSON.stringify(json.Edgar) %>,
+  mvps: <%= JSON.stringify(json.MVP) %>,
+  league: <%= JSON.stringify(json.Mean) %>
+};
+    </script>
 
     <script src="app.js" async></script>
     <% if (json.project.production) { %>
