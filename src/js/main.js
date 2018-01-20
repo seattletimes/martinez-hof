@@ -13,14 +13,12 @@ var chart = new Chartist.Line(".league-comparison .chart");
 
 var updateChart = function() {
   var mode = $.one(`input[name="mode"]:checked`).id;
-  console.log(mode);
   var data = {
     labels: window.hofData.edgar.map(r => r.season),
-    series: [
-      window.hofData.edgar.map(r => r[mode]),
-      window.hofData.mvps.map(r => r[mode]),
-      window.hofData.league.map(r => r[mode])
-    ]
+    series: Object.keys(window.hofData).sort().reverse().map(name => ({
+      className: name,
+      data: window.hofData[name].map(d => d[mode]) 
+    }))
   };
 
   chart.update(data, {
