@@ -1,0 +1,92 @@
+[
+  {
+    "season": 1990,
+    "edgar": 5.5,
+    "mvp": 10.2,
+    "mean": 2.8
+  },
+  {
+    "season": 1991,
+    "edgar": 5.7,
+    "mvp": 10.6,
+    "mean": 2.9
+  },
+  {
+    "season": 1992,
+    "edgar": 6,
+    "mvp": 3.1,
+    "mean": 2.8
+  },
+  {
+    "season": 1993,
+    "edgar": 0.2,
+    "mvp": 6.3,
+    "mean": 2.8
+  },
+  {
+    "season": 1994,
+    "edgar": 3,
+    "mvp": 7,
+    "mean": 1.9
+  },
+  {
+    "season": 1995,
+    "edgar": 7,
+    "mvp": 5.1,
+    "mean": 2.6
+  },
+  {
+    "season": 1996,
+    "edgar": 5.9,
+    "mvp": 3.5,
+    "mean": 2.8
+  },
+  {
+    "season": 1997,
+    "edgar": 6.1,
+    "mvp": 9,
+    "mean": 2.7
+  },
+  {
+    "season": 1998,
+    "edgar": 5.5,
+    "mvp": 4.9,
+    "mean": 2.9
+  },
+  {
+    "season": 1999,
+    "edgar": 5.3,
+    "mvp": 6.8,
+    "mean": 2.9
+  },
+  {
+    "season": 2000,
+    "edgar": 5.3,
+    "mvp": 7.7,
+    "mean": 2.7
+  },
+  {
+    "season": 2001,
+    "edgar": 4.7,
+    "mvp": 6,
+    "mean": 2.9
+  },
+  {
+    "season": 2002,
+    "edgar": 2.1,
+    "mvp": 4.5,
+    "mean": 3
+  },
+  {
+    "season": 2003,
+    "edgar": 2.7,
+    "mvp": 9.2,
+    "mean": 2.8
+  },
+  {
+    "season": 2004,
+    "edgar": -0.5,
+    "mvp": 5.9,
+    "mean": 3
+  }
+]

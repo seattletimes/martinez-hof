@@ -25,6 +25,10 @@
       <hr />
 
       <section class="intro">
+
+        <p>
+          Edgar Martínez is headed for Cooperstown. The graceful, mild-mannered slugger became perhaps the greatest designated hitter to ever play the game over his storied 18-year career in Seattle, and now, his career will be forever remembered in baseball's Hall of Fame. 
+
         <aside class="slider">
           <image-slider>
             <img src="./assets/edgar92.jpg" alt="Edgar Martínez, 1992">
@@ -35,65 +39,89 @@
         </aside>
 
         <p>
-          Edgar Martínez is headed for Cooperstown. The graceful, mild-mannered slugger became perhaps the greatest designated hitter to ever play the game over his storied 18-year career in Seattle. No. 11, known simply as 'Gar by many, was by no means the flashy superstar his Hall-of-Fame teammate Ken Griffey Jr. — the only other player to be enshrined as a Mariner. Instead, Edgar was a mark of consistency. 
+          No. 11, known simply as 'Gar by many, was by no means the flashy superstar his Hall-of-Fame teammate Ken Griffey Jr. was. Instead, Edgar was a mark of consistency. He was a steady force in the middle of the M's lineup, and was known for spraying the baseball all over the yard, hitting doubles and driving in runs. His most memorable moment fittingly came on a hit known now as 'The Double' that clinched the ALDS for the Mariners and capped the most iconic moment in team history. 
 
         <p>
-          He was a consistent force in the middle of the lineup, and was known for spraying the baseball all over the yard, hitting doubles and driving in runs. His most memorable moment, fittingly, came on a hit known now as 'The Double' that clinched the ALDS for the Mariners and capped the most iconic moment in team history. Here's a look back on Edgar's Hall-of-Fame career.
+          Here's a look back on Edgar's Hall-of-Fame career.
       </section>
 
-      <section class="factoids">
 
-        <div class="fact">
-          <img class="star icon" src="./assets/star.jpg">
-          <h2>All-Star games</h2>
-          <h3>7</h3>
-        </div>
+      <section class="by-the-numbers">
+        <h2 class="subhead">By the numbers</h2>
 
-        <div class="fact">
-          <img class="bat icon" src="./assets/slugger.jpg">
-          <h2>Silver Sluggers</h2>
-          <h3>5</h3>
-        </div>
+        <div class="factoids">
 
-        <div class="fact">
-          <img class="crown icon" src="./assets/crown.jpg">
-          <h2>AL batting titles</h2>
-          <h3>2</h3>
-        </div>
+          <div class="fact">
+            <img class="star icon" src="./assets/star.jpg">
+            <h2>All-Star games</h2>
+            <h3>7</h3>
+          </div>
 
-        <div class="fact">
-          <img class="mvp icon" src="./assets/mvp.jpg">
-          <h2>MVP award votes</h2>
-          <div class="mvp-row">
-            <ul class="votes">
-              <% csv.mvp.forEach(function(row) { %>
-              <li> <%= row.year %> - <%= row.place %> place
-              <% }) %>
-            </ul>
+          <div class="fact">
+            <img class="bat icon" src="./assets/slugger.jpg">
+            <h2>Silver Sluggers</h2>
+            <h3>5</h3>
+          </div>
+
+          <div class="fact">
+            <img class="crown icon" src="./assets/crown.jpg">
+            <h2>AL batting titles</h2>
+            <h3>2</h3>
+          </div>
+
+          <div class="mvp fact">
+            <img class="mvp icon" src="./assets/mvp.jpg">
+            <h2>MVP award votes</h2>
+            <div class="mvp-row">
+              <ul class="votes">
+                <% csv.mvp.forEach(function(row) { %>
+                <li> <%= row.year %> - <%= row.place %> place
+                <% }) %>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="league-comparison">
-        <h2>Martínez vs the League</h2>
-        <div class="placeholder"></div>
+        <h2 class="subhead">Martínez vs the League</h2>
+        <p class="chatter">
+          Edgar Martínez, perennially underrated? He was regarded as too old to be a prospect. A torn hamstring relegated him to a career as a designated hitter, overlooked for MVPs and underappreciated by Hall of Fame voters for his nine-year life on the ballot. His reputation will forever be his consistency — and those doubles — but at his peak, Martínez was undoubtedly among the league’s elite. Explore his careers numbers against that season’s American League MVP, and the average American Leaguer to qualify for the batting crown.
+
+        <div class="modes">
+          <input id="runs" type="radio" name="mode">
+          <label for="runs">Runs</label>
+
+          <input id="hits" type="radio" name="mode">
+          <label for="hits">Hits</label>
+        </div>
+
+        <div class="chart ct-minor-seventh"></div>
+        <ul class="key">
+          <li> <i class="edgar key-block"></i> Martínez
+          <li> <i class="league key-block"></i> League average
+          <li> <i class="mvps key-block"></i> League MVP
+        </ul>
       </section>
 
       <section class="yearly-data">
-        <% csv.years.forEach(function(row) { %>
-        <div class="year">
-          <div class="padding-box">
-            <div class="ba-svg">
-              <svg viewBox="-.1 0 2.2 1.2" preserveAspectRatio="none" width="100" height="50">
-                <%
-                  var arc = row.ba / .4 * Math.PI;
-                  var x = 2 - (Math.cos(arc) + 1);
-                  var y = 1 - Math.sin(arc) - 1;
-                %>
-                <path d="M0 1.2 a 1 1, 0, 0, 1, <%= x %> <%= y %>" class="ba-arc" vector-effect="non-scaling-stroke"/>
-              </svg>
-              <div class="ba-label"><%= row.ba.toFixed(3) %></div>
+        <h2 class="subhead">Year by year</h2>
+        <div class="years">
+          <% csv.years.forEach(function(row) { %>
+          <div class="year">
+            <div class="padding-box">
               <div class="year-label"><%= row.year %></div>
+              <div class="ba-svg">
+                <svg viewBox="-.1 0 2.2 1.2" preserveAspectRatio="none" width="100" height="50">
+                  <%
+                    var arc = row.ba / .4 * Math.PI;
+                    var x = 2 - (Math.cos(arc) + 1);
+                    var y = 1 - Math.sin(arc) - 1;
+                  %>
+                  <path d="M0 1.2 a 1 1, 0, 0, 1, <%= x %> <%= y %>" class="ba-arc" vector-effect="non-scaling-stroke"/>
+                </svg>
+              </div>
+              <div class="ba-label"><%= row.ba.toFixed(3) %></div>
               <div class="rbi-grid" role="image" alt="RBI for <%= row.year %>: <%= row.rbi %>">
                 <% for (var i = 0; i < 150; i++) { %>
                 <div class="cell <%= i < row.rbi ? "run" : "null" %>"></div>
@@ -102,15 +130,29 @@
               <div class="rbi-label">
                 <b><%= row.rbi %></b> RBI
               </div>
+
+              <% if (row.year != 1987 && row.year != 1992) { %>
+              <img class="card-front" src="./assets/cards/edgar<%= row.year %>.jpg">
+              <% } else { %>
+              <div class="card-placeholder"></div>
+              <% } %>
             </div>
           </div>
+          <% }) %>
         </div>
-        <% }) %>
       </section>
 
     </main>
 
     <%= t.include("partials/_navBottom.html") %>
+
+    <script>
+window.hofData = {
+  edgar: <%= JSON.stringify(json.Edgar) %>,
+  mvps: <%= JSON.stringify(json.MVP) %>,
+  league: <%= JSON.stringify(json.Mean) %>
+};
+    </script>
 
     <script src="app.js" async></script>
     <% if (json.project.production) { %>

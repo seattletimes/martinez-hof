@@ -1,0 +1,109 @@
+[
+  {
+    "year": 2010,
+    "votes": 195,
+    "ballots": 539,
+    "percent": 0.3617810761,
+    "public votes": 36,
+    "public ballots": 92,
+    "public percent": 0.3913043478,
+    "private votes": 159,
+    "private ballots": 447,
+    "private percent": 0.355704698
+  },
+  {
+    "year": 2011,
+    "votes": 191,
+    "ballots": 581,
+    "percent": 0.3287435456,
+    "public votes": 40,
+    "public ballots": 122,
+    "public percent": 0.3278688525,
+    "private votes": 151,
+    "private ballots": 459,
+    "private percent": 0.3289760349
+  },
+  {
+    "year": 2012,
+    "votes": 209,
+    "ballots": 573,
+    "percent": 0.3647469459,
+    "public votes": 38,
+    "public ballots": 87,
+    "public percent": 0.4367816092,
+    "private votes": 171,
+    "private ballots": 486,
+    "private percent": 0.3518518519
+  },
+  {
+    "year": 2013,
+    "votes": 204,
+    "ballots": 569,
+    "percent": 0.3585237258,
+    "public votes": 56,
+    "public ballots": 168,
+    "public percent": 0.3333333333,
+    "private votes": 148,
+    "private ballots": 401,
+    "private percent": 0.3690773067
+  },
+  {
+    "year": 2014,
+    "votes": 144,
+    "ballots": 511,
+    "percent": 0.2818003914,
+    "public votes": 69,
+    "public ballots": 302,
+    "public percent": 0.2284768212,
+    "private votes": 75,
+    "private ballots": 209,
+    "private percent": 0.3588516746
+  },
+  {
+    "year": 2015,
+    "votes": 148,
+    "ballots": 549,
+    "percent": 0.2695810565,
+    "public votes": 91,
+    "public ballots": 331,
+    "public percent": 0.2749244713,
+    "private votes": 57,
+    "private ballots": 218,
+    "private percent": 0.2614678899
+  },
+  {
+    "year": 2016,
+    "votes": 191,
+    "ballots": 440,
+    "percent": 0.4340909091,
+    "public votes": 146,
+    "public ballots": 307,
+    "public percent": 0.4755700326,
+    "private votes": 45,
+    "private ballots": 133,
+    "private percent": 0.3383458647,
+    "first-time voter": 50
+  },
+  {
+    "year": 2017,
+    "votes": 259,
+    "ballots": 442,
+    "percent": 0.5859728507,
+    "public votes": 195,
+    "public ballots": 309,
+    "public percent": 0.6310679612,
+    "private votes": 64,
+    "private ballots": 133,
+    "private percent": 0.4812030075,
+    "first-time voter": 73.3
+  },
+  {
+    "year": 2018,
+    "percent": "#DIV/0!",
+    "public percent": "#DIV/0!",
+    "private votes": 0,
+    "private ballots": 0,
+    "private percent": "#DIV/0!",
+    "first-time voter": 77.8
+  }
+]
