@@ -270,24 +270,24 @@ aside.slider {
 
 .year {
   text-align: center;
-  .flex(0 0 percentage(1 / 9));
+  // .flex(0 0 percentage(1 / 9));
   border-right: 1px solid @df-light-gray;
 
-  &:nth-child(9n) {
-    border-right: none;
-  }
+  // &:nth-child(9n) {
+  //   border-right: none;
+  // }
 
-  @media @tablet {
+  // @media @tablet {
     .flex(0 0 percentage(1 / 6));
 
-    &:nth-child(9n) {
-      border-right: 1px solid @df-light-gray;
-    }
+    // &:nth-child(9n) {
+    //   border-right: 1px solid @df-light-gray;
+    // }
 
     &:nth-child(6n) {
       border-right: none;
     }
-  }
+  // }
 
   @media @mobile {
     .flex(0 0 33%);
