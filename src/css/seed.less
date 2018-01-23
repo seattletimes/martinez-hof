@@ -182,6 +182,30 @@ aside.slider {
 
 .league-comparison {
 
+  .modes {
+    text-align: center;
+    padding: 8px 0;
+
+    input {
+      opacity: 0;
+      position: absolute;
+      left: -999;
+
+      & + label {
+        font-family: @df-sans;
+        padding: 4px 8px;
+        margin: 0;
+        background: @df-light-gray;
+        border-radius: 2px;
+      }
+
+      &:checked + label {
+        background: @df-blue;
+        color: white;
+      }
+    }
+  }
+
   .edgar {
     path, line {
       stroke: @df-blue;
