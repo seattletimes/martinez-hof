@@ -88,20 +88,28 @@
           Edgar Martínez, perennially underrated? He was regarded as too old to be a prospect. A torn hamstring relegated him to a career as a designated hitter, overlooked for MVPs and underappreciated by Hall of Fame voters for his nine-year life on the ballot. His reputation will forever be his consistency — and those doubles — but at his peak, Martínez was undoubtedly among the league’s elite. Explore his careers numbers against that season’s American League MVP, and the average American Leaguer to qualify for the batting crown.
 
         <div class="modes">
+
+
           <input id="runs" type="radio" name="mode">
           <label for="runs">Runs</label>
 
           <input id="hits" type="radio" name="mode">
           <label for="hits">Hits</label>
 
-          <input id="hr" type="radio" name="mode">
-          <label for="hr">Home runs</label>
-
           <input id="2b" type="radio" name="mode">
-          <label for="2b">2B</label>
+          <label for="2b">Doubles</label>
+
+          <input id="hr" type="radio" name="mode">
+          <label for="hr">Home Runs</label>
+
+          <input id="avg" type="radio" name="mode" checked=checked>
+          <label for="avg">Batting AVG</label>
 
           <input id="ops" type="radio" name="mode">
-          <label for="ops">OPS</label>
+          <label for="ops">OPS *</label>
+
+          <input id="war" type="radio" name="mode">
+          <label for="war">WAR **</label>
         </div>
 
         <ul class="key">
@@ -111,6 +119,11 @@
         </ul>
 
         <div class="chart ct-minor-seventh"></div>
+
+        <ul class="notes">
+          <li> * On-base plus slugging
+          <li> ** Wins above replacement
+        </ul>
       </section>
 
       <section class="yearly-data">
@@ -133,7 +146,7 @@
                   <path d="M0 1.2 a 1 1, 0, 0, 1, <%= x %> <%= y %>" class="ba-arc" vector-effect="non-scaling-stroke"/>
                 </svg>
               </div>
-              <div class="ba-label"><%= row.ba.toFixed(3) %></div>
+              <div class="ba-label"><%= row.ba.toFixed(3).replace(/^0/, "") %></div>
               <div class="rbi-grid" role="image" alt="RBI for <%= row.year %>: <%= row.rbi %>">
                 <% for (var i = 0; i < 150; i++) { %>
                 <div class="cell <%= i < row.rbi ? "run" : "null" %>"></div>
