@@ -321,12 +321,21 @@ aside.slider {
     font-family: @df-sans;
   }
 
-  .card-placeholder::before {
-    display: block;
-    content: "";
-    padding-bottom: percentage(212 / 150);
-    background: @df-light-gray;
-    margin-top: 20px;
+  .card-box {
+    position: relative;
+
+    &::before {
+      display: block;
+      content: "";
+      padding-bottom: percentage(225 / 150);
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
   }
 }
 
