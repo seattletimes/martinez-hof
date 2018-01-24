@@ -194,9 +194,10 @@ aside.slider {
       & + label {
         font-family: @df-sans;
         padding: 4px 8px;
-        margin: 0;
+        margin: 0 0 12px;
         background: @df-light-gray;
         border-radius: 2px;
+        display: inline-block;
       }
 
       &:checked + label {
@@ -370,5 +371,20 @@ aside.slider {
 
   .run::before {
     background: @df-blue;
+  }
+}
+
+.credits {
+  padding: 24px 0;
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    display: block;
+    margin-bottom: 8px;
   }
 }

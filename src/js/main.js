@@ -17,11 +17,17 @@ var updateChart = function() {
     labels: window.hofData.edgar.map(r => r.season),
     series: Object.keys(window.hofData).sort().reverse().map(name => ({
       className: name,
-      data: window.hofData[name].map(d => d[mode]) 
+      data: window.hofData[name].map(d => d[mode])
     }))
   };
 
   chart.update(data, {
+    axisY: {
+      low: 0
+    },
+    axisX: {
+      labelInterpolationFnc: x => "'" + x.toString().slice(2)
+    },
     lineSmooth: Chartist.Interpolation.none({
        fillHoles: false
     })
